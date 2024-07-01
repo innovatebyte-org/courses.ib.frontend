@@ -9,22 +9,34 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gap: {
+        52: "52px",
+      },
+      borderRadius: {
+        20: "20px",
+      },
       fontSize: {
         "h2-md": ["60px", { fontWeight: 500 }],
+        "h3-md": ["48px", { fontWeight: 500 }],
         "h4-md": [
           "36px",
           {
             fontWeight: 500,
           },
         ],
+        "h5-md": ["30px", { fontWeight: 500 }],
         h6: ["24px", { fontWeight: 400 }],
+        "h6-md": ["24px", { fontWeight: 500 }],
         "sub-headline": [
           "20px",
           {
             fontWeight: 400,
           },
         ],
+        "sub-headline-md": ["20px", { fontWeight: 500 }],
+        "body-1-reg": ["18px", { fontWeight: 400 }],
         "body-1-md": ["18px", { fontWeight: 500 }],
+        "body-1-sb": ["18px", { fontWeight: 600 }],
         "body-2": [
           "16px",
           {
@@ -82,14 +94,18 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        text: "linear-gradient(344deg, #001A9A 34.37%, #0400E0 40.8%, #00A3FF 48.96%)",
+        hero: "url('../assets/bg_pattern.png')",
       },
       boxShadow: {
         nav: "0px 5px 74px 0px rgba(0, 0, 0, 0.05)",
         button: "-8px 2px 24px 1px rgba(0, 0, 0, 0.04)",
         mainButton: "-17px 8px 44px 1 rgba(0, 0, 0, 0.16)",
+        verify: "-25px 8px 164px -19px rgba(0, 0, 0, 0.04)",
+        course: "0px 2px 34px 0px rgba(0, 0, 0, 0.08)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
 export default config;

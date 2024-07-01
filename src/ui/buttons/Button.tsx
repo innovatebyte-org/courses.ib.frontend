@@ -6,13 +6,14 @@ import { useRouter } from "next/navigation";
 import { ComponentProps, ReactNode } from "react";
 
 const buttonVariants = cva(
-  "w-full flex rounded-2xl h-[52px] p-3 items-center justify-center gap-2 shadow-mainButton",
+  "w-full flex rounded-2xl h-[52px] p-3 items-center justify-center gap-2 shadow-mainButton disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
-        primary: "bg-ib-primary hover:bg-ib-secondary  text-white",
+        primary:
+          "bg-ib-primary hover:bg-ib-secondary disabled:bg-ib-grey-200 disabled:hover:bg-ib-grey-200 text-white",
         outline: "",
-        text: "",
+        text: "bg-transparent text-ib-primary hover:text-ib-secondary hover:underline",
       },
     },
     defaultVariants: {

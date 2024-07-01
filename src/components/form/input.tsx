@@ -1,38 +1,28 @@
-"use client";
-
+import { useInput } from "@/hooks/useInput";
 import { cn } from "@/utils/cn";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import { ComponentProps, HTMLInputTypeAttribute, useState } from "react";
-// import { FieldValues, UseFormRegister } from "react-hook-form";
+import { ComponentProps, HTMLInputTypeAttribute } from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
 type TInput = ComponentProps<"input"> & {
   label?: string;
   error?: string;
-  // register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<FieldValues>;
   name: string;
 };
 
 export const Input = ({
   label,
-  // register,
+  register,
   name,
   type,
   error,
   className,
   ...props
 }: TInput) => {
-  const [inputType, setInputType] = useState<HTMLInputTypeAttribute>(
-    type || "text",
+  const { inputType, isInputPassword, toggleViewPassword } = useInput(
+    type as HTMLInputTypeAttribute,
   );
-  const isInputPassword = type === "password";
-
-  const toggleViewPassword = () => {
-    if (inputType === "password") {
-      setInputType("text");
-    } else if (inputType === "text") {
-      setInputType("password");
-    }
-  };
 
   return (
     <div className="my-flex-col gap-2">
@@ -47,13 +37,13 @@ export const Input = ({
       <div className="h-16 relative w-full">
         <input
           className={cn(
-            "w-full h-full py-5 px-6 flex self-stretch border border-ib-grey-200 rounded-2xl text-sub-headline text-ib-grey-950 focus:outline-none focus:border-ib-grey-900 focus:border-2",
+            "w-full h-full py-5 px-6 flex self-stretch border border-ib-grey-200 rounded-2xl text-sub-headline text-ib-grey-950 focus:outline-none focus:ring-0 focus:border-ib-grey-900 focus:border-2",
             className,
           )}
           id={name}
-          name={name}
+          // name={name}
           type={inputType}
-          // {...register(name)}
+          {...register(name)}
           {...props}
         />
         {isInputPassword && (

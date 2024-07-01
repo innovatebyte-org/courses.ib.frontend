@@ -11,4 +11,8 @@
   .my-flex-col {
     @apply flex flex-col items-start self-stretch w-full;
   }
+
+  .text-gradient {
+    @apply bg-text text-transparent bg-clip-text;
+  }
 }
