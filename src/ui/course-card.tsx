@@ -6,7 +6,7 @@ import {
   ClipboardDocumentListIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 
 export const CourseCard = ({ children }: PropsWithChildren) => (
@@ -26,9 +26,15 @@ const CourseHeading = ({
   };
 }) => (
   <div
-    className="h-[220px] w-full relative bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: `url(${coverImage.src})` }}
+    className="h-[220px] w-full relative overflow-hidden"
+  // style={{ backgroundImage: `url(${coverImage.src})` }}
   >
+    <Image
+      src={coverImage.src}
+      alt="Course Cover"
+      fill
+      className="w-full h-full object-center object-cover hover:scale-125 transition-all duration-500 ease-out"
+    />
     <div className="absolute bottom-2 left-6 inline-flex p-1 items-center justify-center gap-1.5 rounded-full bg-black/50">
       <span className="size-6 rounded-full bg-white flex items-center justify-center">
         {image}

@@ -96,6 +96,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         text: "linear-gradient(344deg, #001A9A 34.37%, #0400E0 40.8%, #00A3FF 48.96%)",
         hero: "url('../assets/bg_pattern.png')",
+        couple_laptop: 'url("../assets/couple_smiling_at_laptop.png")',
+        learning: "linear-gradient(180deg, #1A4CFF 0%, #EBEFFF 100%)",
       },
       boxShadow: {
         nav: "0px 5px 74px 0px rgba(0, 0, 0, 0.05)",

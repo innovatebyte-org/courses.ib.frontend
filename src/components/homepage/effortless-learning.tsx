@@ -19,7 +19,10 @@ export const EffortlessLearning = () => (
       </Section.Description>
     </Section.Heading>
 
-    <div className="my-flex-col gap-5">
+    <Section.Body className="lg:grid-cols-2 items-start gap-5 lg:gap-11">
+      <div className="w-full h-[570px] lg:h-full rounded-20 bg-learning relative overflow-hidden">
+        <div className="w-[494px] lg:w-[610px] h-full bg-couple_laptop bg-cover bg-no-repeat left-1/2 -translate-x-1/2 absolute bottom-0" />
+      </div>
       <div className="my-flex-col gap-5">
         <Learning
           icon={<IdentificationIcon className="text-current" />}
@@ -34,12 +37,10 @@ export const EffortlessLearning = () => (
         <Learning
           icon={<LightBulbIcon className="text-current" />}
           title="Interactive content"
-          text="Engage with dynamic and interactive materials, including videos, quizzes, and discussions, designed to enhance your learning experience.
-
-"
+          text="Engage with dynamic and interactive materials, including videos, quizzes, and discussions, designed to enhance your learning experience."
         />
       </div>
-    </div>
+    </Section.Body>
   </Section>
 );
 
@@ -53,7 +54,9 @@ const Learning = ({ title, text, icon }: LearningProps) => (
     <span className="size-10 p-2 flex items-center justify-center rounded-full bg-ib-primary text-white">
       {icon}
     </span>
-    <h5 className="text-left text-ib-grey-950 text-sub-headline-md">{title}</h5>
+    <h5 className="text-left text-ib-grey-950 text-sub-headline-md lg:text-h6">
+      {title}
+    </h5>
     <p className="text-left text-ib-grey-400 text-body-2">{text}</p>
   </div>
 );

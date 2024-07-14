@@ -21,7 +21,9 @@ export const Section = ({
 );
 
 const SectionHeading = ({ children }: PropsWithChildren) => (
-  <div className="my-flex-col gap-4 items-center text-center">{children}</div>
+  <div className="my-flex-col lg:w-3/4 mx-auto gap-4 lg:gap-0.5 items-center text-center">
+    {children}
+  </div>
 );
 
 const SectionTitle = ({ children, className }: SectionProps) => (
@@ -41,7 +43,13 @@ const SectionBody = ({
   children,
   ...props
 }: ComponentProps<"div">) => (
-  <div className={cn("my-flex-col", className)} {...props}>
+  <div
+    className={cn(
+      "w-full h-full grid grid-cols-1 lg:grid-cols-2 items-start",
+      className,
+    )}
+    {...props}
+  >
     {children}
   </div>
 );
