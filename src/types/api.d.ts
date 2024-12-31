@@ -29,3 +29,18 @@ export type LoginResponse = ServerResponse & {
   token: string;
 };
 export type LoginData = LoginType;
+
+type Course = {
+  _id: string;
+  title: string;
+  slug: string;
+  description: string;
+  category: string;
+  level: string;
+  previewImage: string;
+  modules: Array<string>;
+  students: Array<string>;
+  price: number;
+  rating: number;
+  __v: number;
+};

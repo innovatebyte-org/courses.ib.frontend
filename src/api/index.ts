@@ -1,3 +1,4 @@
+import { getAuthToken } from "@/utils/auth";
 import axios from "axios";
 
 const AxiosApi = axios.create({
@@ -9,27 +10,13 @@ const AxiosApi = axios.create({
   },
 });
 
-// AxiosApi.interceptors.response.use(
-//   function(response) {
-//     return response;
-//   },
-//   function(error) {
-//     if (error.response && error.response.status === 401) {
-//       // Redirect user to login page
-//       const navigate = useNavigate();
-//       navigate("/login"); // Update '/login' with your login page route
-//     }
-//     return Promise.reject(error);
-//   },
-// );
+AxiosApi.interceptors.request.use(function (config) {
+  const token = getAuthToken();
+  if (token) {
+    config.headers.Authorization = `${token}`;
+  }
 
-// AxiosApi.interceptors.request.use(function(config) {
-//   // const token = getToken();
-//   if (token) {
-//     config.headers.Authorization = `Bearer ${token}`;
-//   }
-//
-//   return config;
-// });
+  return config;
+});
 
 export default AxiosApi;

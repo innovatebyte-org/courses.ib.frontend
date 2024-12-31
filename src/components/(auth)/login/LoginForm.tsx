@@ -8,13 +8,18 @@ import { Button } from "@/ui/buttons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ZodError } from "zod";
 
 export const LoginForm = () => {
+  const router = useRouter();
   const { loginStudentAction } = useAuth();
   const { mutateAsync: handleStudentLogin } = useMutation({
     mutationFn: loginStudentAction,
+    onSuccess: (res) => {
+      router.push("/my-learning");
+    },
   });
 
   const {

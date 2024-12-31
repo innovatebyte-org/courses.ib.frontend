@@ -21,7 +21,7 @@ export const useAuth = () => {
         })
         .catch((error) => {
           // show notification
-          console.log(`An error occurred: ${error.messsage}`);
+          console.log(`An error occurred: ${error.message}`);
         });
     });
   };
@@ -33,7 +33,7 @@ export const useAuth = () => {
           resolve(res);
         })
         .catch((error) => {
-          console.log(`An error occurred: ${error.messsage}`);
+          console.log(`An error occurred: ${error.message}`);
         });
     });
   };
@@ -48,7 +48,7 @@ export const useAuth = () => {
           resolve(res);
         })
         .catch((error) => {
-          console.log(`An error occurred: ${error.messsage}`);
+          console.log(`An error occurred: ${error.message}`);
         });
     });
   };

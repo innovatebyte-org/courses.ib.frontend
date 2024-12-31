@@ -2,6 +2,22 @@ import { ComponentProps } from "react";
 
 type TIcon = ComponentProps<"svg">;
 
+export const TestimonialStarIcon = ({ ...props }: TIcon) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="56"
+    height="56"
+    viewBox="0 0 56 56"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M28 0C31.9474 13.4977 42.5023 24.0526 56 28C42.5023 31.9474 31.9474 42.5023 28 56C24.0526 42.5023 13.4977 31.9474 0 28C13.4977 24.0526 24.0526 13.4977 28 0Z"
+      fill="white"
+    />
+  </svg>
+);
+
 export const Stroke1Bar = ({ ...props }: TIcon) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

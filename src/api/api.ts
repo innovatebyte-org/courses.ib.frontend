@@ -10,4 +10,8 @@ export const apis = {
     forgotPassword: `${api}/auth/forgot-password`,
     getUser: `${api}/auth/user-details`,
   },
+  courses: {
+    allCourses: `${api}/courses/all`,
+    studentCourses: `${api}/courses/my-courses`,
+  },
 };

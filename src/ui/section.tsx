@@ -11,7 +11,7 @@ export const Section = ({
 }: ComponentProps<"section">) => (
   <section
     className={cn(
-      "my-flex-col items-center py-10 gap-16 px-5 lg:px-[100px]",
+      "my-flex-col items-center py-10 lg:py-24 gap-16 px-5 lg:px-[100px]",
       className,
     )}
     {...props}

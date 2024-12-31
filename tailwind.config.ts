@@ -49,6 +49,7 @@ const config: Config = {
             fontWeight: 400,
           },
         ],
+        "special-2-reg": ["12px", { fontWeight: 400 }],
       },
       colors: {
         ib: {
@@ -87,6 +88,9 @@ const config: Config = {
             900: "#2E3081",
             950: "#1B1C4B",
           },
+          tertiaryy: {
+            100: "#FF740F",
+          },
           linear: "",
         },
       },
@@ -105,6 +109,8 @@ const config: Config = {
         mainButton: "-17px 8px 44px 1 rgba(0, 0, 0, 0.16)",
         verify: "-25px 8px 164px -19px rgba(0, 0, 0, 0.04)",
         course: "0px 2px 34px 0px rgba(0, 0, 0, 0.08)",
+        testimonial: "0px 4px 44px 40px #0228E5 inset",
+        star: "0px 4px 24px 10px rgba(255, 255, 255, 0.12) inset",
       },
     },
   },

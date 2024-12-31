@@ -19,7 +19,8 @@ const CourseHeading = ({
   coverImage,
   tutor: { image, name },
 }: {
-  coverImage: StaticImageData;
+  // coverImage: StaticImageData;
+  coverImage: string;
   tutor: {
     image: ReactNode;
     name: string;
@@ -27,10 +28,10 @@ const CourseHeading = ({
 }) => (
   <div
     className="h-[220px] w-full relative overflow-hidden"
-  // style={{ backgroundImage: `url(${coverImage.src})` }}
+    // style={{ backgroundImage: `url(${coverImage.src})` }}
   >
     <Image
-      src={coverImage.src}
+      src={coverImage}
       alt="Course Cover"
       fill
       className="w-full h-full object-center object-cover hover:scale-125 transition-all duration-500 ease-out"
@@ -48,7 +49,7 @@ const CourseContent = ({ children }: PropsWithChildren) => (
   <div className="px-4 w-full flex flex-col gap-4 items-start">{children}</div>
 );
 
-const CoursePrice = ({ price }: { price: string }) => (
+const CoursePrice = ({ price }: { price: number }) => (
   <p className="text-ib-accent-100 text-body-1-sb">₦ {price}</p>
 );
 
