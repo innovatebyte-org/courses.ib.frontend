@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LoginHeader } from "./Header";
 import { LoginForm } from "./LoginForm";
 
@@ -15,10 +16,11 @@ export const LoginPage = () => {
           alt="login page"
           className="absolute top-0 left-1/2 -translate-x-1/2 size-5/6 object-cover object-center border border-red-900"
         /> */}
-        <img
+        <Image
           src="/images/login-bubble.svg"
           alt="login bubble"
           className="absolute -z-10 bottom-0 right-0 size-auto"
+          fill
         />
       </div>
     </div>
