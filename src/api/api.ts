@@ -12,6 +12,7 @@ export const apis = {
   },
   courses: {
     allCourses: `${api}/courses/all`,
+    singleCourse: (slug: string) => `${api}/courses/${slug}`,
     studentCourses: `${api}/courses/my-courses`,
   },
 };

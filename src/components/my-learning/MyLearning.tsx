@@ -1,4 +1,5 @@
 import { Course } from "@/types/api";
+import { CourseList } from "../courses/CourseList";
 
 type TMyLearning = {
   courses: Array<Course>;
@@ -10,9 +11,7 @@ export const MyLearningPage = ({ courses }: TMyLearning) => {
   }
   return (
     <div>
-      {courses.map((course) => (
-        <div key={course._id}>{course.title}</div>
-      ))}
+      <CourseList courses={courses} />
     </div>
   );
 };

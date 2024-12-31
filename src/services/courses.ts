@@ -10,6 +10,15 @@ export const getAllCourses = async () => {
     }
   );
 };
+
+export const getSingleCourse = async (slug: string) => {
+  return AxiosApi.get<{ course: Course }>(apis.courses.singleCourse(slug)).then(
+    (res) => {
+      return res.data.course;
+    }
+  );
+};
+
 export const getStudentCourses = async () => {
   return AxiosApi.get<{ courses: Array<Course> }>(apis.courses.studentCourses)
     .then((res) => {

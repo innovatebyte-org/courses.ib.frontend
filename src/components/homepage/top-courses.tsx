@@ -1,10 +1,8 @@
 import { Button } from "@/ui/buttons";
 import { Section } from "@/ui/section";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import coverImage from "@/assets/course_cover_image.png";
-import { CourseCard } from "@/ui/course-card";
-import { IBTutorIcon } from "@/assets/icons";
 import { getAllCourses } from "@/services/courses";
+import { CourseList } from "../courses/CourseList";
 
 export const TopCourses = async () => {
   const courses = await getAllCourses();
@@ -29,34 +27,7 @@ export const TopCourses = async () => {
         >
           Explore courses
         </Button>
-        <div className="my-flex-col justify-end-end gap-5 lg:grid lg:grid-cols-3">
-          {topCourses.map((course) => (
-            <CourseCard key={course._id}>
-              <CourseCard.Heading
-                coverImage={course.previewImage}
-                tutor={{ name: "InnovateByte experts", image: <IBTutorIcon /> }}
-              />
-              <CourseCard.Content>
-                <CourseCard.Rate
-                  rate={course.rating}
-                  level={
-                    course.level.toLowerCase() as
-                      | "beginner"
-                      | "intermediate"
-                      | "expert"
-                  }
-                />
-                <CourseCard.Title title={course.title} />
-                <CourseCard.Info
-                  noOfModules={course.modules.length}
-                  hours={14}
-                  category={course.category}
-                />
-                <CourseCard.Price price={course.price} />
-              </CourseCard.Content>
-            </CourseCard>
-          ))}
-        </div>
+        <CourseList courses={topCourses} />
       </Section.Body>
     </Section>
   );
